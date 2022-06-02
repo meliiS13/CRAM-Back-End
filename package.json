@@ -28,7 +28,6 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "sqlserver": "0.0.2-security",
     "typeorm": "^0.3.6"
   },
   "devDependencies": {
