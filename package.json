@@ -24,10 +24,13 @@
     "@nestjs/common": "^8.4.5",
     "@nestjs/core": "^7.5.5",
     "@nestjs/platform-express": "^7.5.5",
+    "@nestjs/typeorm": "^8.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "tedious": "^14.5.0"
+    "sqlserver": "0.0.2-security",
+    "tedious": "^14.5.0",
+    "typeorm": "^0.3.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
