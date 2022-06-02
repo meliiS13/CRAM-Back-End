@@ -4,8 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LugaresController } from './lugares/lugares.controller';
 import { UsuarioController } from './usuario/usuario.controller';
-import {Usuario} from './usuario/usuario.entity';
-import {Lugares} from './lugares/lugares.entity';
+import { Usuario } from './usuario/usuario.entity';
+import { Lugares } from './lugares/lugares.entity';
 
 
 
@@ -23,4 +23,4 @@ import {Lugares} from './lugares/lugares.entity';
     }),
   ],
 })
-export class AppModule {}
+export class AppModule { }

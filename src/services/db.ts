@@ -1,20 +1,20 @@
-const Connection = require('tedious').Connection;  
-const config = {  
-    server: 'A-LUM-11',  
+const Connection = require('tedious').Connection;
+const config = {
+    server: 'A-LUM-11',
     authentication: {
         type: 'default',
         options: {
-            userName: '46214658', 
-            password: 'DF46214658'  
+            username: '46214658',
+            password: 'DF46214658'
         }
     },
     options: {
-        database: 'ProyectoFinal'  
+        database: 'ProyectoFinal'
     }
-};  
-const connection = new Connection(config);  
-connection.on('connect', function(err) {  
-    console.log("Connected");  
+};
+const connection = new Connection(config);
+connection.on('connect', function (err) {
+    console.log("Connected");
 });
 
 connection.connect();
