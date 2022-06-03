@@ -1,15 +1,14 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
-export class Lugares {
+export class Lugar {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
-  @Column({ length: 500 })
+  @Column()
   nombre: string;
 
-  @Column('text')
+  @Column()
   description: string;
-
 
 }
 
