@@ -4,10 +4,10 @@ export class Lugar {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @Column()
+  @Column('Nombre')
   nombre: string;
 
-  @Column()
+  @Column('Descripcion')
   description: string;
 
 }

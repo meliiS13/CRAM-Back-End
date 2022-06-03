@@ -1,6 +1,7 @@
 import { Controller, Body, Get, Post, Patch, Delete, Param } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service'
 import { Usuario } from './usuario.entity'
+
 @Controller('usuarios')
 export class UsuariosController {
     constructor(private usuariosService: UsuariosService) { }
