@@ -5,16 +5,16 @@ export class Usuario {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @Column('Nombre')
+  @Column({name: 'Nombre', type: 'varchar'})
   nombre: string;
 
-  @Column('Password')
+  @Column({name: 'Password', type: 'varchar'})
   password: string;
 
-  @Column('Username')
+  @Column({name: 'Username'})
   username: string;
 
-  @Column('Mail')
+  @Column({name:'Mail'})
   mail: string;
 
 }
