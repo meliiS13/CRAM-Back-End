@@ -14,7 +14,7 @@ export class UsuariosService {
         return this.usuarios.find();
     }
 
-    getUsuarioByID(id: string): Promise<Usuario> {
+    getUsuarioByID(id: number): Promise<Usuario> {
         return this.usuarios.findOneBy({ id: id });
     }
 
@@ -22,11 +22,11 @@ export class UsuariosService {
         return this.usuarios.save(usuario);
     }
 
-    editarUsuario(id: string, usuario: Usuario) {
+    editarUsuario(id: number, usuario: Usuario) {
         return this.usuarios.update(id, usuario);
     }
 
-    async eliminarUsuario(id: string): Promise<void>  {
+    async eliminarUsuario(id: number): Promise<void>  {
         await this.usuarios.delete(id);
     }
 

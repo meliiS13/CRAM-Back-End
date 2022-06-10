@@ -6,19 +6,21 @@ import { LugarModule } from './lugares/lugares.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { Usuario } from './usuarios/usuario.entity';
 import { Lugar } from './lugares/lugares.entity';
+import { Reseña } from './reseñas/reseñas.entity';
+import { ReseñaModule } from './reseñas/reseñas.module';
 
 
 @Module({ 
   providers: [AppService],
   controllers: [AppController],
-  imports: [ LugarModule, UsuariosModule, TypeOrmModule.forRoot({
+  imports: [ LugarModule, UsuariosModule, ReseñaModule, TypeOrmModule.forRoot({
     type: 'mssql',
     host: 'localhost',
     port: 1433,
     username: 'alumno',
     password: 'alumno',
     database: 'ProyectoFinal',
-    entities: [Usuario, Lugar],
+    entities: [Usuario, Lugar, Reseña],
     synchronize: false,
   }), 
   ],

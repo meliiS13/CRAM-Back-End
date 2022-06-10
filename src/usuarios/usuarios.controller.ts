@@ -12,7 +12,7 @@ export class UsuariosController {
     }
 
     @Get(':id')
-    getUsuarioByID(@Param('id') id: string) {
+    getUsuarioByID(@Param('id') id: number) {
         return this.usuariosService.getUsuarioByID(id);
     }
 
@@ -22,12 +22,12 @@ export class UsuariosController {
     }
 
     @Patch(':id')
-    editarUsuario(@Param('id') id: string, @Body() usuario: Usuario) {
+    editarUsuario(@Param('id') id: number, @Body() usuario: Usuario) {
         return this.usuariosService.editarUsuario(id, usuario);
     }
 
     @Delete(':id')
-    eliminarUsuario(@Param('id') id: string) {
+    eliminarUsuario(@Param('id') id: number) {
         return this.usuariosService.eliminarUsuario(id);
     }
 
