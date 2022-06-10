@@ -2,13 +2,13 @@ import { Entity, Column, PrimaryGeneratedColumn,  } from 'typeorm';
 @Entity()
 export class Lugar {
   @PrimaryGeneratedColumn()
-  id: string;
+  IdLugar: string;
 
-  @Column({name : 'nombre', type:'varchar'})
+  @Column({name : 'nombre', type:'text'})
   
   nombre: string;
 
-  @Column({name: 'Descripcion', type:'varchar'})
+  @Column({name: 'Descripcion', type:'text'})
   description: string;
 
 }

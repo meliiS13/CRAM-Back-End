@@ -1,12 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import {Usuario} from 'src/usuarios/usuario.entity';
-import { Lugar } from 'src/lugares/lugares.entity';
 @Entity()
 export class Reseña {
   @PrimaryGeneratedColumn()
-  id: number;
+  IdResenia: number;
 
-  @Column({name: 'Nombre', type: 'varchar'})
+  @Column({name: 'Nombre', type: 'text'})
   titulo: string;
 
   @Column({name: 'Descripcion'})
@@ -16,8 +14,8 @@ export class Reseña {
   comentarios: string;
 
   @Column({name:'IdUsuario'})
-  idIsuario: Usuario.id; // ee no sé como ponerlo
+  idUsuario: number; // hay que igualar EN ALGUNA PARTE
 
   @Column ({name: 'IdLugar'})
-  idLugar: Lugar.id ;
+  idLugar: string ;
 }

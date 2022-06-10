@@ -11,16 +11,16 @@ export class LugaresService {
         private lugares: Repository<Lugar>,
     ) { }
 
-    mostrarLugares(): Promise<Lugar[]> {
+    getLugares(): Promise<Lugar[]> {
         return this.lugares.find();
     }
 
-    encontrarlugar(id: string): Promise<Lugar> {
-        return this.lugares.findOneBy({ id: id });
+    getLugarById(id: string): Promise<Lugar> {
+        return this.lugares.findOneBy({ IdLugar: id });
     }
 
-    async eliminarlugar(id: string): Promise<void> {
-        await this.lugares.delete({ id: id });
+    async eliminarLugar(id: string): Promise<void> {
+        await this.lugares.delete({ IdLugar: id });
     }
 
     crearLugar(lugar: Lugar): Promise<Lugar> {
@@ -28,6 +28,6 @@ export class LugaresService {
     }
 
     async editarLugar(id: string, lugar: Lugar): Promise<void> {
-        await this.lugares.update({ id: id }, lugar);
+        await this.lugares.update({ IdLugar: id }, lugar);
     }
 }

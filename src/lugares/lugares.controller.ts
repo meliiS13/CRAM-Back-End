@@ -6,13 +6,13 @@ export class LugaresController {
     constructor(private lugaresService: LugaresService) { }
 
     @Get()
-    MostrarLugar() {
-        return this.lugaresService.mostrarLugares();
+    GetLugares() {
+        return this.lugaresService.getLugares();
     }
 
     @Get(':id')
-    EncontrarLugar(@Param('id') id: string) {
-        return this.lugaresService.encontrarlugar(id);
+    GetLugarById(@Param('id') id: string) {
+        return this.lugaresService.getLugarById(id);
     }
 
     @Post()
@@ -27,7 +27,7 @@ export class LugaresController {
 
     @Delete(':id')
     EliminarLugar(@Param('id') id: string) {
-        return this.lugaresService.eliminarlugar(id);
+        return this.lugaresService.eliminarLugar(id);
     }
 
 }

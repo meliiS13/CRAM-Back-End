@@ -10,23 +10,23 @@ export class ReseñasService {
         private reseñas: Repository<Reseña>,
     ) { }
 
-    getUsuarios(): Promise<Reseña[]> {
+    getReseña(): Promise<Reseña[]> {
         return this.reseñas.find();
     }
 
-    getUsuarioByID(id: number): Promise<Reseña> {
-        return this.reseñas.findOneBy({ id: id });
+    getReseñabyID (id: number): Promise<Reseña> {
+        return this.reseñas.findOneBy({ IdResenia: id });
     }
 
-    crearUsuario(reseña: Reseña) {
+    crearReseña(reseña: Reseña) {
         return this.reseñas.save(reseña);
     }
 
-    editarUsuario(id: number, reseña: Reseña) {
+    editarReseña(id: number, reseña: Reseña) {
         return this.reseñas.update(id, reseña);
     }
 
-    async eliminarUsuario(id: number): Promise<void>  {
+    async eliminarReseña(id: number): Promise<void>  {
         await this.reseñas.delete(id);
     }
 

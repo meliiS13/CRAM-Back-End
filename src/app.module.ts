@@ -8,6 +8,7 @@ import { Usuario } from './usuarios/usuario.entity';
 import { Lugar } from './lugares/lugares.entity';
 import { Reseña } from './reseñas/reseñas.entity';
 import { ReseñaModule } from './reseñas/reseñas.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({ 
@@ -22,7 +23,7 @@ import { ReseñaModule } from './reseñas/reseñas.module';
     database: 'ProyectoFinal',
     entities: [Usuario, Lugar, Reseña],
     synchronize: false,
-  }), 
+  }), AuthModule, 
   ],
   
 })

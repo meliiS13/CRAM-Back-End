@@ -15,7 +15,7 @@ export class UsuariosService {
     }
 
     getUsuarioByID(id: number): Promise<Usuario> {
-        return this.usuarios.findOneBy({ id: id });
+        return this.usuarios.findOneBy( {IdUsuario: id});
     }
 
     crearUsuario(usuario: Usuario) {
@@ -28,6 +28,10 @@ export class UsuariosService {
 
     async eliminarUsuario(id: number): Promise<void>  {
         await this.usuarios.delete(id);
+    }
+
+     findOne(username: string): Promise<Usuario | undefined> {
+        return this.usuarios.findOneBy({username: username});
     }
 
 }
