@@ -7,15 +7,18 @@ export class Reseña {
   @Column({name: 'Nombre', type: 'text'})
   titulo: string;
 
-  @Column({name: 'Descripcion'})
-  descripcion: string; // creo que meli se comió la parte que más destacó en la tabla, fijate en figma dsp
+  @Column({name: 'Destacar', type: 'varchar'})
+  destacar: string; 
 
-  @Column({name:'Comentarios'})
+  @Column({name: 'Descripcion', type: 'varchar'})
+  descripcion: string; 
+
+  @Column({name:'Comentarios', type: 'varchar'})
   comentarios: string;
 
-  @Column({name:'IdUsuario'})
-  idUsuario: number; // hay que igualar EN ALGUNA PARTE
+  @Column({name:'IdUsuario', type: 'int'})
+  idUsuario: number; // hay que igualar 
 
-  @Column ({name: 'IdLugar'})
+  @Column ({name: 'IdLugar', type: 'int'})
   idLugar: string ;
 }

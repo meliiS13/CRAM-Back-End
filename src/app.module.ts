@@ -20,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
     port: 1433,
     username: 'alumno',
     password: 'alumno',
-    database: 'ProyectoFinal',
+    database: 'CRAM',
     entities: [Usuario, Lugar, Reseña],
     synchronize: false,
   }), AuthModule, 
