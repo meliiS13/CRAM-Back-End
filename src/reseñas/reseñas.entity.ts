@@ -13,6 +13,8 @@ export class Reseña {
   @Column({name: 'Descripcion', type: 'varchar'})
   descripcion: string; 
 
+  @Column({name: 'Puntaje', type:'int'})
+  puntaje: number;
   @Column({name:'Comentarios', type: 'varchar'})
   comentarios: string;
 

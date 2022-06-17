@@ -3,8 +3,7 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
-@Injectable() // npm install --save @nestjs/passport passport passport-local
-//npm install --save-dev @types/passport-local
+@Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
     super();
@@ -17,4 +16,4 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     }
     return user;
   }
-}
+} 
