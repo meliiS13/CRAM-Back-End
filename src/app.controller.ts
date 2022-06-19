@@ -1,17 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Request, Post, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
-import { LugaresService } from './lugares/lugares.service';
-import { ReseñasService } from './reseñas/reseñas.service';
-import { UsuariosService } from './usuarios/usuarios.service';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard } from '@nestjs/passport';
+import {LocalAuthGuard} from './auth/local-auth.guard';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly authService: AuthService) {}
 
-  @Get()
-  getReseñas(): string {
-    return this.appService.getHello();
+  @UseGuards(LocalAuthGuard)
+  @Post('auth/login')
+  async login(@Request() req){
+    return this.authService.login(req.user); //devuelve un jwt
   }
-
-
 }

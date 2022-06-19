@@ -28,9 +28,9 @@ export class UsuariosService {
 
     async eliminarUsuario(id: number): Promise<void>  {
         await this.usuarios.delete(id);
-    }
+    } 
 
-     findOne(username: string): Promise<Usuario | undefined> {
+    findOne(username: string): Promise<Usuario | undefined> {
         return this.usuarios.findOneBy({username: username});
     }
 
