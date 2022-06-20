@@ -2,15 +2,15 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
+
   const app = await NestFactory.create(AppModule); //npm install --save @nestjs/swagger swagger-ui-express
 
-
   const config = new DocumentBuilder()
-  .setTitle('CRAM')
-  .setDescription('')
-  .setVersion('1.0')
-  .addTag('cram')
-  .build();
+    .setTitle('CRAM')
+    .setDescription('')
+    .setVersion('1.0')
+    .addTag('cram')
+    .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 

@@ -5,27 +5,27 @@ import {Lugar} from './lugares.entity'
 export class LugaresController {
     constructor(private lugaresService: LugaresService) { }
 
-    @Get()
+    @Get() // localhost:3000/Lugares
     GetLugares() {
         return this.lugaresService.getLugares();
     }
 
-    @Get(':id')
+    @Get(':id') // localhost:3000/Lugares/1
     GetLugarById(@Param('id') id: string) {
         return this.lugaresService.getLugarById(id);
     }
 
-    @Post()
+    @Post() // localhost:3000/Lugares
     CrearLugar(@Body() lugar: Lugar) {
         return this.lugaresService.crearLugar(lugar);
     }
 
-    @Patch(':id')
+    @Patch(':id') // localhost:3000/Lugares/1
     EditarLugar(@Param('id') id: string, @Body() lugar: Lugar) {
         return this.lugaresService.editarLugar(id, lugar);
     }
 
-    @Delete(':id')
+    @Delete(':id') // localhost:3000/Lugares/1
     EliminarLugar(@Param('id') id: string) {
         return this.lugaresService.eliminarLugar(id);
     }

@@ -11,20 +11,25 @@ import { ReseñaModule } from './reseñas/reseñas.module';
 import { AuthModule } from './auth/auth.module';
 
 
-@Module({ 
+@Module({
   providers: [AppService],
   controllers: [AppController],
-  imports: [ LugarModule, UsuariosModule, ReseñaModule, TypeOrmModule.forRoot({
-    type: 'mssql',
-    host: 'localhost',
-    port: 1433,
-    username: 'alumno',
-    password: 'alumno',
-    database: 'CRAM',
-    entities: [Usuario, Lugar, Reseña],
-    synchronize: false,
-  }), AuthModule, 
+  imports: [
+    LugarModule,
+    UsuariosModule,
+    ReseñaModule,
+    AuthModule,
+    TypeOrmModule.forRoot({
+      type: 'mssql',
+      host: 'localhost',
+      port: 1433,
+      /* username: 'alumno',
+      password: 'alumno', */
+      database: 'CRAM',
+      entities: [Usuario, Lugar, Reseña],
+      synchronize: false,
+    }),
   ],
-  
+
 })
-export class AppModule {}
+export class AppModule { }

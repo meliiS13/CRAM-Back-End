@@ -6,27 +6,27 @@ import { Reseña } from './reseñas.entity';
 export class ReseñasController {
     constructor(private ReseñasService: ReseñasService) { }
 
-    @Get()
+    @Get() // localhost:3000/reseñas/
     getReseñas() {
         return this.ReseñasService.getReseña();
     }
 
-    @Get(':id')
+    @Get(':id') // localhost:3000/reseñas/1
     getReseñaByID(@Param('id') id: number) {
         return this.ReseñasService.getReseñabyID(id);
     }
 
-    @Post()
+    @Post() // localhost:3000/reseñas
     crearReseña(@Body() reseñas: Reseña) {
         return this.ReseñasService.crearReseña(reseñas);
     }
 
-    @Patch(':id')
+    @Patch(':id') // localhost:3000/reseñas/1
     editarReseña(@Param('id') id: number, @Body() reseñas: Reseña) {
         return this.ReseñasService.editarReseña(id, reseñas);
     }
 
-    @Delete(':id')
+    @Delete(':id') // localhost:3000/reseñas/1
     eliminarReseña(@Param('id') id: number) {
         return this.ReseñasService.eliminarReseña(id);
     }
