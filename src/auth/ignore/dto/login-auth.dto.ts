@@ -1,4 +1,4 @@
-import { MinLength, MaxLength, IsNotEmpty } from "class-validator";
+/* import { MinLength, MaxLength, IsNotEmpty } from "class-validator";
 import { Entity, Column } from 'typeorm';
 
 @Entity()
@@ -13,4 +13,4 @@ export class LoginAuthDto{
     password: string
 
 
-}
+} */

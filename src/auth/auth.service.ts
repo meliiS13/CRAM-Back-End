@@ -1,18 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { UsuariosService } from '../usuarios/usuarios.service';
-import { JwtService } from '@nestjs/jwt';
-import { RegisterAuthDto } from './dto/registrar-auth.dto';
-import { hash, compare } from 'bcrypt';
-import { LoginAuthDto } from './dto/login-auth.dto';
+
 import { Usuario } from 'src/usuarios/usuario.entity';
 
 @Injectable()
 export class AuthService {
   constructor(
     private usuariosService: UsuariosService,
-    private jwtService: JwtService
+    /*private jwtService: JwtService */
   ) { }
 
+  async validateUser(username: string, pass: string): Promise<any> {
+    const user = await this.usuariosService.findOne(username);
+    if (user && user.password === pass) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
+  }
+  /*
   async register(user: RegisterAuthDto) {
     const { password, nombre, mail } = user; // aca entra la contraseña con el texto plano que ingresa el usuario
     const passToHash = await hash(password, 10)  // aca se encripta la contraseña
@@ -44,6 +50,8 @@ export class AuthService {
       access_token,
     }
     return data;
-  }
+  } 
+  */
+
 
 }
