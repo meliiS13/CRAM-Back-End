@@ -1,11 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
-export class Reseña {
+export class resenia {
   @PrimaryGeneratedColumn()
   IdResenia: number;
 
-  @Column({name: 'Nombre', type: 'text'})
-  titulo: string;
 
   @Column({name: 'Destacar', type: 'varchar'})
   destacar: string; 
@@ -15,6 +13,7 @@ export class Reseña {
 
   @Column({name: 'Puntaje', type:'int'})
   puntaje: number;
+
   @Column({name:'Comentarios', type: 'varchar'})
   comentarios: string;
 
@@ -23,4 +22,8 @@ export class Reseña {
 
   @Column ({name: 'IdLugar', type: 'int'})
   idLugar: string ;
+  
+  @Column({name: 'Titulo', type: 'varchar'})
+  titulo: string;
+
 }

@@ -5,18 +5,19 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthController } from './auth.controller';
 import { Usuario } from 'src/usuarios/usuario.entity';
-import { LocalStrategy } from './local.strategy';
 
+import { JwtModule } from '@nestjs/jwt';
+import { JwtConstants } from './constants';
 @Module({
   imports: [
     UsuariosModule,
     PassportModule,
     TypeOrmModule.forFeature([Usuario]),
-    /*JwtModule.register({
+    JwtModule.register({
       secret: JwtConstants.secret,
-    }), */
+    }), 
   ], 
-  providers: [AuthService, LocalStrategy, /*JwtStrategy*/],  
+  providers: [AuthService, /*JwtStrategy*/],  
   exports:[AuthService],
   controllers: [AuthController],
 })

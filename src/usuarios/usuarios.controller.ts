@@ -1,7 +1,7 @@
 import { Controller, Body, Get, Post, Patch, Delete, Param, UseGuards } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service'
 import { Usuario } from './usuario.entity'
-import {JwtAuthGuard} from '../auth/jwt-auth.guard'
+
 
 @Controller('usuarios')
 export class UsuariosController {
@@ -12,7 +12,7 @@ export class UsuariosController {
         return this.usuariosService.getUsuarios();
     }
 
-    @UseGuards(JwtAuthGuard)
+
     @Get(':id') //localhost:3000/usuarios/1
     getUsuarioByID(@Param('id') id: number) {
         return this.usuariosService.getUsuarioByID(id);

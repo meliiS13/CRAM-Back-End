@@ -1,4 +1,4 @@
-/*import { PartialType } from "@nestjs/swagger";
+import { PartialType } from "@nestjs/swagger";
 import { IsEmail, MaxLength, MinLength, IsNotEmpty } from "class-validator";
 import { LoginAuthDto } from "./login-auth.dto";
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
@@ -17,4 +17,4 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto){
 
     IdUsuario: number
     
-} */
+} 

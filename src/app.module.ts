@@ -6,8 +6,8 @@ import { LugarModule } from './lugares/lugares.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { Usuario } from './usuarios/usuario.entity';
 import { Lugar } from './lugares/lugares.entity';
-import { Reseña } from './reseñas/reseñas.entity';
-import { ReseñaModule } from './reseñas/reseñas.module';
+import { resenia } from './resenias/resenias.entity';
+import { reseniaModule } from './resenias/resenias.module';
 import { AuthModule } from './auth/auth.module';
 
 
@@ -17,16 +17,16 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     LugarModule,
     UsuariosModule,
-    ReseñaModule,
+    reseniaModule,
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'mssql',
       host: 'localhost',
       port: 1433,
-      /* username: 'alumno',
-      password: 'alumno', */
+      username: 'alumno',
+      password: 'alumno', 
       database: 'CRAM',
-      entities: [Usuario, Lugar, Reseña],
+      entities: [Usuario, Lugar, resenia],
       synchronize: false,
     }),
   ],
