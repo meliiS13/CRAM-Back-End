@@ -14,7 +14,6 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto){
     mail: string
 
     @PrimaryGeneratedColumn()
-
     IdUsuario: number
     
 } 

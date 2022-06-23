@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { UsuariosService } from '../usuarios/usuarios.service';
 import { RegisterAuthDto } from './ignore/dto/registrar-auth.dto';
 import { LoginAuthDto } from './ignore/dto/login-auth.dto';
@@ -36,15 +36,13 @@ export class AuthService {
     const { username, password } = user // esto saca d el user las variables para desp usarlas abajo 
     const validarUsuario = await this.usuariosService.findOne(username) // se valida que el usuario exista
     
-    if (!validarUsuario) {
-       return null 
-    } // si no existe se da null, despues vamos a poner los http exception
+    if (!validarUsuario) throw new HttpException('user_not_found', 404) 
+    // si no existe se da null, despues vamos a poner los http exception
     
     const validarPassword = await compare(password, validarUsuario.password) // validamos q la contra encrytada sea la misma q la q se ingresa
     
-    if (!validarPassword) {
-       return null 
-    }
+    if (!validarPassword) throw new HttpException('password_incorrect', 403)  //probar mañana si funciona el login
+    
 
     const payload = { username: validarUsuario.username, sub: validarUsuario.IdUsuario };
     const access_token = this.jwtService.sign(payload) // genera el token 
