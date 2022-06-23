@@ -22,7 +22,7 @@ export class AuthController {
     }
 
     @Post('login') // Localhost:3000/auth/login
-    async loginUse(@Body() usuarioObject: LoginAuthDto) {
+    loginUse(@Body() usuarioObject: LoginAuthDto) {
       return this.authService.login(usuarioObject); 
     } 
 }

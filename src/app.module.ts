@@ -22,7 +22,7 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forRoot({
       type: 'mssql',
       host: 'localhost',
-      port: 1433,
+      port: 1434,
       username: 'alumno',
       password: 'alumno', 
       database: 'CRAM',
