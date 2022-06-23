@@ -5,6 +5,9 @@ export class Usuario {
   @PrimaryGeneratedColumn()
   IdUsuario: number; 
 
+  @Column({name: 'Foto', type: 'text'})
+  foto: string;
+
   @Column({name: 'Nombre', type: 'text'})
   nombre: string;
 
