@@ -18,11 +18,12 @@ export class AuthService {
     const salt = await genSalt();
     const key = await hash(password, salt)  // aca se encripta la contraseña
     const newUsuario = { IdUsuario: 1, username:username, nombre: nombre, mail: mail, password: key };
-    return (this.usuariosService.crearUsuario(newUsuario as Usuario)) // esto guarda en la bdd elnuevo usuario con la contraseña encryptada
+    return this.usuariosService.crearUsuario(newUsuario as Usuario) // esto guarda en la bdd elnuevo usuario con la contraseña encryptada
   }
 
 
   async login(user: LoginAuthDto) {
+
     const { username, password } = user // esto saca d el user las variables para desp usarlas abajo 
     const validarUsuario = await this.usuariosService.findOne(username) // se valida que el usuario exista
 
