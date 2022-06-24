@@ -9,7 +9,7 @@ export class LoginAuthDto{
     username: string
 
     @Column({name: 'Password', type: 'varchar'})
-    @MinLength(8)
+    @MinLength(6)
     password: string
 
 

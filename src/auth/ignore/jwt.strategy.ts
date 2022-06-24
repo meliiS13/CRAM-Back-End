@@ -11,7 +11,7 @@ export class JwtStrategy extends PassportStrategy(Strategy){
             ignoreExpiration: false, // si te manda uno expired te manda 401
             secretOrKey: JwtConstants.secret,
         });
-     }
+    }
  
     async validate(payload: any){
         return {IdUsuario: payload.sub, username: payload.username};
