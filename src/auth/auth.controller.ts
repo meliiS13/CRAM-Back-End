@@ -9,12 +9,6 @@ import { LoginAuthDto } from './ignore/dto/login-auth.dto';
 export class AuthController {
     constructor(private readonly authService: AuthService){}
 
-    /*@UseGuards(LocalAuthGuard)
-    @Post('login') // Localhost:3000/auth/login
-    async login(@Request() req){
-      return req.user
-    } */
-
     @UseGuards(JwtAuthGuard)
     @Post('register')
     RegisterUser(@Body() usuarioObject: RegisterAuthDto){

@@ -14,11 +14,13 @@ export class AuthService {
   ) { }
 
   async register(user: RegisterAuthDto) {
-    const { password, nombre, mail, username } = user; // aca entra la contraseña con el texto plano que ingresa el usuario
+    let user_logged : Usuario
+    const { password, nombre, mail, username, foto } = user; // aca entra la contraseña con el texto plano que ingresa el usuario
     const salt = await genSalt();
     const key = await hash(password, salt)  // aca se encripta la contraseña
-    const newUsuario = { IdUsuario: 1, username: username, nombre: nombre, mail: mail, password: key };
-    return this.usuariosService.crearUsuario(newUsuario as Usuario) // esto guarda en la bdd elnuevo usuario con la contraseña encryptada
+    user_logged = { IdUsuario: 1, username: username, nombre: nombre, mail: mail, password: key, foto: foto }
+    return user_logged 
+    /*this.usuariosService.crearUsuario(user_logged) */// esto guarda en la bdd elnuevo usuario con la contraseña encryptada
   }
 
 

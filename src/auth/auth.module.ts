@@ -5,9 +5,9 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthController } from './auth.controller';
 import { Usuario } from 'src/usuarios/usuario.entity';
-
 import { JwtModule } from '@nestjs/jwt';
 import { JwtConstants } from './constants';
+import { JwtStrategy } from './ignore/jwt.strategy';
 @Module({
   imports: [
     UsuariosModule,
@@ -17,7 +17,7 @@ import { JwtConstants } from './constants';
       secret: JwtConstants.secret,
     }), 
   ], 
-  providers: [AuthService, /*JwtStrategy*/],  
+  providers: [AuthService, JwtStrategy],  
   exports:[AuthService],
   controllers: [AuthController],
 })
