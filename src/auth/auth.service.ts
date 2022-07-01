@@ -17,7 +17,7 @@ export class AuthService {
     const { password, nombre, mail, username } = user; // aca entra la contraseña con el texto plano que ingresa el usuario
     const salt = await genSalt();
     const key = await hash(password, salt)  // aca se encripta la contraseña
-    const newUsuario = { IdUsuario: 1, username:username, nombre: nombre, mail: mail, password: key };
+    const newUsuario = { IdUsuario: 1, username: username, nombre: nombre, mail: mail, password: key };
     return this.usuariosService.crearUsuario(newUsuario as Usuario) // esto guarda en la bdd elnuevo usuario con la contraseña encryptada
   }
 
@@ -29,9 +29,9 @@ export class AuthService {
 
     if (!validarUsuario) throw new HttpException('user_not_found', 404)  // si no existe se da null, despues vamos a poner los http exception
 
-    const validarPassword = await compare(password, validarUsuario.password) // validamos q la contra encrytada sea la misma q la q se ingresa
+    /*const validarPassword = await compare(password, validarUsuario.password)*/ // esto va cuando ya las contras de la bdd esten hasheadas
 
-    if (validarPassword) {
+    if (password == validarUsuario.password) {
       const payload = { username: validarUsuario.username, sub: validarUsuario.IdUsuario };
       const access_token = this.jwtService.sign(payload) // genera el token 
 

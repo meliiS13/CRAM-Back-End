@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
-export class resenia {
+export class Review {
   @PrimaryGeneratedColumn()
-  IdResenia: number;
+  IdReview: number;
 
 
   @Column({name: 'Destacar', type: 'varchar'})
