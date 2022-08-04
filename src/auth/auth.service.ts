@@ -1,7 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { UsuariosService } from '../usuarios/usuarios.service';
-import { RegisterAuthDto } from './ignore/dto/registrar-auth.dto';
-import { LoginAuthDto } from './ignore/dto/login-auth.dto';
+import { RegisterAuthDto } from './dto/registrar-auth.dto';
+import { LoginAuthDto } from './dto/login-auth.dto';
 import { Usuario } from 'src/usuarios/usuario.entity';
 import { JwtService } from '@nestjs/jwt';
 import { hash, compare, genSalt } from 'bcrypt'
