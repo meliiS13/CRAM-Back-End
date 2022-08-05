@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
 
-  const app = await NestFactory.create(AppModule); //npm install --save @nestjs/swagger swagger-ui-express
+  const app = await NestFactory.create(AppModule, {cors: true}); 
 
   const config = new DocumentBuilder()
     .setTitle('CRAM')
