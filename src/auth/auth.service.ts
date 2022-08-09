@@ -4,7 +4,7 @@ import { RegisterAuthDto } from './dto/registrar-auth.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
 import { Usuario } from 'src/usuarios/usuario.entity';
 import { JwtService } from '@nestjs/jwt';
-import { hash, compare, genSalt } from 'bcrypt'
+import { hash, compare, genSalt } from 'bcryptjs'
 
 @Injectable()
 export class AuthService {
