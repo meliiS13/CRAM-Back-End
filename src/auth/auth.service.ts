@@ -4,7 +4,7 @@ import { RegisterAuthDto } from './dto/registrar-auth.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
 import { Usuario } from 'src/usuarios/usuario.entity';
 import { JwtService } from '@nestjs/jwt';
-import { hash, compare, genSalt } from 'bcrypt'
+import { hash, compare, genSalt } from 'bcryptjs'
 
 @Injectable()
 export class AuthService {
@@ -27,7 +27,7 @@ export class AuthService {
   async login(user: LoginAuthDto) {
 
     const { username, password } = user // esto saca d el user las variables para desp usarlas abajo 
-    const validarUsuario = await this.usuariosService.findOne(username) // se valida que el usuario exista
+    const validarUsuario = await this.usuariosService.getUsuarioByUsername(username) // se valida que el usuario exista
 
     if (!validarUsuario) throw new HttpException('user_not_found', 404)  // si no existe se da null, despues vamos a poner los http exception
 

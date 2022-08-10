@@ -30,7 +30,7 @@ export class UsuariosService {
         await this.usuarios.delete(id);
     } 
 
-    findOne(username: string): Promise<Usuario | undefined> {
+    getUsuarioByUsername(username: string): Promise<Usuario | undefined> {
         return this.usuarios.findOneBy({username: username});
     }
 
