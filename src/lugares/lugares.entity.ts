@@ -8,7 +8,7 @@ export class Lugar {
   
   nombre: string;
 
-  @Column({name: 'description', type:'text'})
+  @Column({name: 'Descripcion', type:'text'})
   description: string;
 
 }
